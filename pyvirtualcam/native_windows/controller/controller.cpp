@@ -48,7 +48,7 @@ bool virtual_output_start(int width, int height, double fps, int delay)
 	uint64_t interval = static_cast<int64_t>(1000000000 / fps);
 
 	start = shared_queue_create(&out_data->video_queue,
-		ModeVideo, AV_PIX_FMT_RGBA, out_data->width, out_data->height,
+		ModeVideo, AV_PIX_FMT_BGRA, out_data->width, out_data->height,
 		interval, delay + 10);
 
 	if (start) {
